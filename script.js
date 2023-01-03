@@ -1,4 +1,5 @@
 //create function to get random computer input
+  //get random number and choose rock, paper, or scissor based off of that
 function getComputerChoice() {
   const num = (Math.floor(Math.random() * 3) + 1);
   switch(num) {
@@ -15,11 +16,14 @@ function getComputerChoice() {
       return 'Error'
   }
 }
-  //get random number and choose rock, paper, or scissor based off of that
-//get user input and store it in a variable
+  //get user input and store it in a variable
+const playerSelection = prompt('What is your move?').toLowerCase();
+console.log(playerSelection);
 //create function to play one round of rock paper scissors
+
   //compare user input agains't computer for all possibilities
   //return result.
+
 //create function that plays five rounds
   //loop round function five times.
   //output final result
