@@ -31,9 +31,17 @@ function playRound(playerSelection, computerSelection) {
     } else {
       return "It's a tie!";
     }
+  } else if (computerSelection == 'paper') {
+    if (playerSelection === 'scissors') {
+      return 'You win! Scissors beats paper!';
+    } else if (playerSelection === 'rock') {
+      return 'You lose! Paper beats rock!';
+    } else {
+      return "It's a tie!";
+    }
   }
 }
-console.log(playRound(playerSelection, 'rock'));
+console.log(playRound(playerSelection, 'paper'));
 //create function that plays five rounds
   //loop round function five times.
   //output final result
