@@ -23,31 +23,15 @@ const playerSelection = prompt('What is your move?').toLowerCase();
   //compare user input agains't computer for all possibilities
   //return result.
 function playRound(playerSelection, computerSelection) {
-  if (computerSelection === 'rock') {
-    if (playerSelection === 'paper') {
-      return 'You win! Paper beats rock!';
-    } else if (playerSelection == 'scissors') {
-      return 'You lose! Rock beats scissors!';
-    } else {
-      return "It's a tie!";
-    }
-  } else if (computerSelection === 'paper') {
-    if (playerSelection === 'scissors') {
-      return 'You win! Scissors beats paper!';
-    } else if (playerSelection === 'rock') {
-      return 'You lose! Paper beats rock!';
-    } else {
-      return "It's a tie!";
-    }
-  } else if (computerSelection === 'scissors') {
-    if (playerSelection === 'rock') {
-      return 'You win! Rock beats scissors!';
-    } else if (playerSelection === 'paper') {
-      return 'You lose! Scissors beats paper!';
-    } else {
-      return "It's a tie!";
-    }
+  let playerWin = false;
+  if (computerSelection === 'rock' && playerSelection === 'paper') {
+    playerWin = true;
+  } else if (computerSelection === 'paper' && playerSelection === 'scissors') {
+    playerWin = true;
+  } else if (computerSelection === 'scissors' && playerSelection === 'rock') {
+    playerWin = true;
   }
+  return playerWin;
 }
 console.log(playRound(playerSelection, getComputerChoice()));
 //create function that plays five rounds
