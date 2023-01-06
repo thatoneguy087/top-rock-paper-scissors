@@ -58,7 +58,7 @@ function game() {
   let score = 'The final score is ';
 
   for (let i = 0; i<5; i++) {
-    const playerMove = prompt('What is your move?');
+    const playerMove = prompt('What is your move?').toLowerCase();
     const computerMove = getComputerChoice();
 
     console.log(`Player chose ${playerMove}.`);
