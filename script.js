@@ -23,6 +23,9 @@ function getComputerChoice() {
   //return result.
 function playRound(playerSelection, computerSelection) {
   let playerWin = false;
+  if(playerSelection != 'rock' || playerSelection != 'paper' || playerSelection != 'scissors') {
+    return playerWin;
+  }
   if (computerSelection === 'rock' && playerSelection === 'paper') {
     playerWin = true;
   } else if (computerSelection === 'paper' && playerSelection === 'scissors') {
