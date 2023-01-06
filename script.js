@@ -35,12 +35,12 @@ function playRound(playerSelection, computerSelection) {
 }
 function logWinner(playerSelection, computerSelection, winner) {
   if(winner) {
-    return 'win';
+    return `You win! ${playerSelection} beats ${computerSelection}.`;
   }
   if(playerSelection === computerSelection) {
-    return 'tie';
+    return `It's a tie!`;
   }
-  return 'loss'
+  return `You lose! ${computerSelection} beats ${playerSelection}.`
 }
 
 const computerMove = getComputerChoice();
