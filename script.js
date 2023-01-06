@@ -17,7 +17,7 @@ function getComputerChoice() {
   }
 }
   //get user input and store it in a variable
-const playerSelection = prompt('What is your move?').toLowerCase();
+const playerMove = prompt('What is your move?').toLowerCase();
 //create function to play one round of rock paper scissors
 
   //compare user input agains't computer for all possibilities
@@ -33,7 +33,22 @@ function playRound(playerSelection, computerSelection) {
   }
   return playerWin;
 }
-console.log(playRound(playerSelection, getComputerChoice()));
+function logWinner(playerSelection, computerSelection, winner) {
+  if(winner) {
+    return 'win';
+  }
+  if(playerSelection === computerSelection) {
+    return 'tie';
+  }
+  return 'loss'
+}
+
+const computerMove = getComputerChoice();
+
+console.log(playerMove);
+console.log(computerMove);
+console.log(playRound(playerMove, computerMove));
+console.log(logWinner(playerMove, computerMove, playRound(playerMove,computerMove)));
 //create function that plays five rounds
   //loop round function five times.
   //output final result
