@@ -21,9 +21,16 @@ function getComputerChoice() {
 
   //compare user input agains't computer for all possibilities
   //return result.
+function isRockPaperScissors(playerSelection){
+  if(playerSelection === 'rock' || playerSelection === 'paper' || playerSelection === 'scissors') {
+    return true;
+  }
+  return false;
+}
+
 function playRound(playerSelection, computerSelection) {
   let playerWin = false;
-  if(playerSelection != 'rock' || playerSelection != 'paper' || playerSelection != 'scissors') {
+  if(!isRockPaperScissors(playerSelection)){
     return playerWin;
   }
   if (computerSelection === 'rock' && playerSelection === 'paper') {
