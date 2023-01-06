@@ -17,7 +17,6 @@ function getComputerChoice() {
   }
 }
   //get user input and store it in a variable
-const playerMove = prompt('What is your move?').toLowerCase();
 //create function to play one round of rock paper scissors
 
   //compare user input agains't computer for all possibilities
@@ -43,12 +42,43 @@ function logWinner(playerSelection, computerSelection, winner) {
   return `You lose! ${computerSelection} beats ${playerSelection}.`
 }
 
-const computerMove = getComputerChoice();
+function game() {
+  let playerScore = 0;
+  let computerScore = 0;
+  let score = 'The final score is ';
 
-console.log(playerMove);
-console.log(computerMove);
-console.log(playRound(playerMove, computerMove));
-console.log(logWinner(playerMove, computerMove, playRound(playerMove,computerMove)));
+  for (let i = 0; i<5; i++) {
+    const playerMove = prompt('What is your move?');
+    const computerMove = getComputerChoice();
+
+    console.log(`Player chose ${playerMove}.`);
+    console.log(`Computer chose ${computerMove}.`);
+    let playerWin = playRound(playerMove, computerMove);
+    console.log(logWinner(playerMove, computerMove, playerWin));
+    console.log('');
+
+    if(playerMove === computerMove) {
+      playerScore++;
+      computerScore++;
+    } else if (playerWin) {
+      playerScore++;
+    } else {
+      computerScore++;
+    }
+  }
+  score += playerScore + ' to ' + computerScore + '.'
+  if(playerScore > computerScore) {
+    score += ' You win the game!';
+  } else if (computerScore > playerScore) {
+    score += ' You lost the game!';
+  } else {
+    score += ` The game is a tie!`;
+  }
+  return score;
+}
+
+console.log(game());
+
 //create function that plays five rounds
   //loop round function five times.
   //output final result
